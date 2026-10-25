@@ -1,0 +1,326 @@
+Command: /home/gfnow/.espressif/python_env/idf6.0_py3.14_env/bin/python /home/gfnow/.espressif/v6.0.2/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/gfnow/Projects/UART/esp32/build/esp32.elf /home/gfnow/Projects/UART/esp32/build/bootloader/bootloader.elf -m '/home/gfnow/.espressif/python_env/idf6.0_py3.14_env/bin/python' '/home/gfnow/.espressif/v6.0.2/esp-idf/tools/idf.py'
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 sizeESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378c4e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xda0
+load:0x403cb700,len:0x2f54
+entry 0x403c8908
+[0;32mI (24) boot: ESP-IDF v6.0.2 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct 11 2026 15:06:26[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0aa7ch ( 43644) map[0m
+[0;32mI (94) esp_image: segment 1: paddr=0001aaa4 vaddr=3fc90e00 size=030d8h ( 12504) load[0m
+[0;32mI (97) esp_image: segment 2: paddr=0001db84 vaddr=40374000 size=02494h (  9364) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1526ch ( 86636) map[0m
+[0;32mI (124) esp_image: segment 4: paddr=00035294 vaddr=40376494 size=0a8f8h ( 43256) load[0m
+[0;32mI (135) esp_image: segment 5: paddr=0003fb94 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (141) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (141) boot: Disabling RNG early entropy source...[0m
+[0;32mI (152) cpu_start: Multicore app[0m
+[0;32mI (161) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (162) cpu_start: Pro cpu start user code[0m
+[0;32mI (162) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (163) app_init: Application information:[0m
+[0;32mI (167) app_init: Project name:     esp32[0m
+[0;32mI (171) app_init: App version:      1[0m
+[0;32mI (174) app_init: Compile time:     Oct 11 2026 15:06:19[0m
+[0;32mI (179) app_init: ELF file SHA256:  a70f2723c...[0m
+[0;32mI (183) app_init: ESP-IDF:          v6.0.2[0m
+[0;32mI (187) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (191) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (195) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (199) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (205) heap_init: At 3FC948C0 len 00054E50 (339 KiB): RAM[0m
+[0;32mI (210) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (215) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (221) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (227) spi_flash: detected chip: boya[0m
+[0;32mI (229) spi_flash: flash io: dio[0m
+[0;33mW (232) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (245) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (251) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (258) main_task: Started on CPU0[0m
+[0;32mI (258) main_task: Calling app_main()[0m
+[0;32mI (268) LINK: Старт. UART1 9600 8N1, TX=17 RX=18, кнопка GPIO0[0m
+[0;32mI (16048) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (16248) LINK: NO ACK (отримано: '')[0m
+[0;32mI (16248) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (16448) LINK: NO ACK (отримано: '')[0m
+[0;32mI (16448) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (16648) LINK: NO ACK (отримано: '')[0m
+[1;31mE (16648) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (268) LINK: Старт. UART1 9600 8N1, TX=17 RX=18, кноп�I (8918) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (9118) LINK: NO ACK (отримано: '')[0m
+[0;32mI (9118) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (9318) LINK: NO ACK (отримано: '')[0m
+[0;32mI (9318) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (9518) LINK: NO ACK (отримано: '')[0m
+[1;31mE (9518) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (99168) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (99368) LINK: NO ACK (отримано: '�F'[��F'[��F'[��F'S��F'S��F'S��')[0m
+[0;32mI (99368) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (99568) LINK: NO ACK (отримано: '�F'[��F'[��F'S��F'S��F'[��F'S��')[0m
+[0;32mI (99568) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (99768) LINK: NO ACK (отримано: '�F'[��F'[��F'[��F'[��F'[��F'[��')[0m
+[1;31mE (99768) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (106798) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (106998) LINK: NO ACK (отримано: '�F'[��F'[��F'[�8F'[׸F'[׸F'[׸')[0m
+[0;32mI (106998) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (107198) LINK: NO ACK (отримано: '�F'[��F'[��F'[��F'S��F'[��F'[��')[0m
+[0;32mI (107198) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (107398) LINK: NO ACK (отримано: '�F'[�8F'��8F'[׸F'[׸F'[׸F'S׸')[0m
+[1;31mE (107398) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (124938) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (125138) LINK: NO ACK (отримано: 'F'[׸F��׸F'[׸F'[׸F'[׸F'[׸F')[0m
+[0;32mI (125138) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (125338) LINK: NO ACK (отримано: 'F��װF'[׸F'[׸F'[׸F�[�8F'[׸F')[0m
+[0;32mI (125338) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (125538) LINK: NO ACK (отримано: 'F'[׸F'[װF'[׸F'[׸N'[׸N'[׸F')[0m
+[1;31mE (125538) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (208568) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (208768) LINK: NO ACK (отримано: '�f'[��n'[��f'[��f'[��n'[��f'S��')[0m
+[0;32mI (208768) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (208968) LINK: NO ACK (отримано: '�V'[��V'[��V'S��V'[��^'[��V�[��')[0m
+[0;32mI (208968) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (209168) LINK: NO ACK (отримано: '�V'[��V'[�8V'[׸V'[׸V'[׸^'[׸')[0m
+[1;31mE (209168) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (212148) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (212348) LINK: NO ACK (отримано: '�^'S��V'S��^'[��V'S��V'[��V'[��')[0m
+[0;32mI (212348) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (212548) LINK: NO ACK (отримано: '�~'[��~'S��v'[��v'[��~'S��~'[��')[0m
+[0;32mI (212548) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (212748) LINK: NO ACK (отримано: '�v'[��v'[��~'S��v'[��v'[��v'[��')[0m
+[1;31mE (212748) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (213658) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (213858) LINK: NO ACK (отримано: '�N<S��N'S��N'S��N'[��N'S��N'S��')[0m
+[0;32mI (213858) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (214058) LINK: NO ACK (отримано: '�N'S��N<S��N'S��N'S��N'S��N'S��')[0m
+[0;32mI (214058) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (214258) LINK: NO ACK (отримано: '�N'S��N'S��N'S��N'S��N'[��F'[��')[0m
+[1;31mE (214258) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (215008) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (215208) LINK: NO ACK (отримано: '�F'[��F'[��F'[��N'S��F'[��N'[��')[0m
+[0;32mI (215208) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (215408) LINK: NO ACK (отримано: '�F'[��N'S��F'[��F'S��N'[��F'[��')[0m
+[0;32mI (215408) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (215608) LINK: NO ACK (отримано: '�N'S��N'S��N'S��N'S��N'S��F'[��')[0m
+[1;31mE (215608) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (216538) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (216738) LINK: NO ACK (отримано: '�f'[��f'[��n'[��f'[��n'S��f'[��')[0m
+[0;32mI (216738) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (216938) LINK: NO ACK (отримано: '�F+F��N+N��F+N��N+N��N+N��N+F��')[0m
+[0;32mI (216938) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (217138) LINK: NO ACK (отримано: '�N+N��N+N��N+N��N+N��F+N��F+F��')[0m
+[1;31mE (217138) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (248038) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (248238) LINK: NO ACK (отримано: '�F+F��N+F��F+F��F+F��F+F��F+F��')[0m
+[0;32mI (248238) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (248438) LINK: NO ACK (отримано: '�F+F�8F+F�8F+F��F+F��F+F��F�F�8')[0m
+[0;32mI (248438) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (248638) LINK: NO ACK (отримано: '�F+F��F+F�8F+F��F�F��F+F��F+F��')[0m
+[1;31mE (248638) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (51018) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (51218) LINK: NO ACK (отримано: '')[0m
+[0;32mI (51218) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (51418) LINK: NO ACK (отримано: '')[0m
+[0;32mI (51418) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (51618) LINK: NO ACK (отримано: '')[0m
+[1;31mE (51618) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (54428) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (54628) LINK: NO ACK (отримано: '')[0m
+[0;32mI (54628) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (54828) LINK: NO ACK (отримано: '')[0m
+[0;32mI (54828) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (55028) LINK: NO ACK (отримано: '')[0m
+[1;31mE (55028) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (56038) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (56238) LINK: NO ACK (отримано: '')[0m
+[0;32mI (56238) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (56438) LINK: NO ACK (отримано: '')[0m
+[0;32mI (56438) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (56638) LINK: NO ACK (отримано: '')[0m
+[1;31mE (56638) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (268) LINK: Старт. UART1 9600 8N1, TX=17 RX=18, кноп�I (3458) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (3658) LINK: NO ACK (отримано: 'TM] UART error #376 (baud/parit')[0m
+[0;32mI (3658) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (3858) LINK: NO ACK (отримано: ' nois[STM] UART error #386 (bau')[0m
+[0;32mI (3858) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (4058) LINK: NO ACK (отримано: 'mismatch? noi[STM] UART error #')[0m
+[1;31mE (4058) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (7458) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (7658) LINK: NO ACK (отримано: '? nois[STM] UART error #576 (ba')[0m
+[0;32mI (7658) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (7858) LINK: NO ACK (отримано: 'mismatch? nois[STM] UART error ')[0m
+[0;32mI (7858) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (8058) LINK: NO ACK (отримано: 'parity mismatch? nois[STM] UART')[0m
+[1;31mE (8058) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (9128) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (9328) LINK: NO ACK (отримано: 'i[STM] UART error #659 (baud/pa')[0m
+[0;32mI (9328) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (9528) LINK: NO ACK (отримано: 'tch? nois[STM] UART error #670 ')[0m
+[0;32mI (9528) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (9728) LINK: NO ACK (отримано: 'ty mismatch? nois[STM] UART err')[0m
+[1;31mE (9728) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (11088) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (11288) LINK: NO ACK (отримано: 'rity mismatch? nois[STM] UART e')[0m
+[0;32mI (11288) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (11488) LINK: NO ACK (отримано: 'aud/parity mismatch? nois[STM] ')[0m
+[0;32mI (11488) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (11688) LINK: NO ACK (отримано: ' #776 (baud/parity mismatch? no')[0m
+[1;31mE (11688) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (14728) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (14928) LINK: NO ACK (отримано: 'parity mismatch? nois[STM] UART')[0m
+[0;32mI (14928) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (15128) LINK: NO ACK (отримано: ' (baud/parity mismatch? nois[ST')[0m
+[0;32mI (15128) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (15328) LINK: NO ACK (отримано: 'ror #958 (baud/parity mismatch?')[0m
+[1;31mE (15328) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (16388) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (16588) LINK: NO ACK (отримано: '(baud/parity mismatch? no[STM] ')[0m
+[0;32mI (16588) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (16788) LINK: NO ACK (отримано: ' #1031 (baud/parity mismatch? n')[0m
+[0;32mI (16788) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (16988) LINK: NO ACK (отримано: 'RT error #1042 (baud/parity mis')[0m
+[1;31mE (16988) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (359128) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (359328) LINK: NO ACK (отримано: '')[0m
+[0;32mI (359328) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (359528) LINK: NO ACK (отримано: '')[0m
+[0;32mI (359528) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (359728) LINK: NO ACK (отримано: '')[0m
+[1;31mE (359728) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (421828) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (422028) LINK: NO ACK (отримано: '')[0m
+[0;32mI (422028) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (422228) LINK: NO ACK (отримано: '')[0m
+[0;32mI (422228) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (422428) LINK: NO ACK (отримано: '')[0m
+[1;31mE (422428) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (513318) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (513518) LINK: NO ACK (отримано: '')[0m
+[0;32mI (513518) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (513718) LINK: NO ACK (отримано: '')[0m
+[0;32mI (513718) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (513918) LINK: NO ACK (отримано: '')[0m
+[1;31mE (513918) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (546138) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (546338) LINK: NO ACK (отримано: '')[0m
+[0;32mI (546338) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (546538) LINK: NO ACK (отримано: '')[0m
+[0;32mI (546538) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (546738) LINK: NO ACK (отримано: '')[0m
+[1;31mE (546738) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (555618) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (555818) LINK: NO ACK (отримано: '8v#g��V�g��V�g��V#g��V�g�8V#��8')[0m
+[0;32mI (555818) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (556018) LINK: NO ACK (отримано: '8v���8F���8F���8F���8F�g�8F���8')[0m
+[0;32mI (556018) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (556218) LINK: NO ACK (отримано: '�f#��8F���8F�g��F#��8F����F#g��')[0m
+[1;31mE (556218) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (559768) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (559968) LINK: NO ACK (отримано: '�V#g��v#g��v#��8F#��8F����F�g�8')[0m
+[0;32mI (559968) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (560168) LINK: NO ACK (отримано: '8F����f�g�8f#g�8F#���F#g�8F�g�8')[0m
+[0;32mI (560168) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (560368) LINK: NO ACK (отримано: '8F#g�8f#g��f#o��^#g��V#g��V#g��')[0m
+[1;31mE (560368) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (560988) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (561188) LINK: NO ACK (отримано: '�f#g��f#���F#���F���8F���8F#��8')[0m
+[0;32mI (561188) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (561388) LINK: NO ACK (отримано: '8f#g�8f�g�8F���8F���8F���8F#��8')[0m
+[0;32mI (561388) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (561588) LINK: NO ACK (отримано: '�f#g��f�g��V#g��V#g�8V#��8V#g��')[0m
+[1;31mE (561588) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (562258) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (562458) LINK: NO ACK (отримано: '�V#g��V#g��V#g��V#���V#g��V#g��')[0m
+[0;32mI (562458) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (562658) LINK: NO ACK (отримано: '�V#g��V#g��V#g�8V#g�8V����V#g��')[0m
+[0;32mI (562658) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (562858) LINK: NO ACK (отримано: '�F#g��F���8F����F#g��F#g��F�g��')[0m
+[1;31mE (562858) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (563558) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (563758) LINK: NO ACK (отримано: '8V����V#g��v#g��v#g��^#g��V#g��')[0m
+[0;32mI (563758) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (563958) LINK: NO ACK (отримано: '8V#g�8V���8v����v#��8F#g�8F�g��')[0m
+[0;32mI (563958) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (564158) LINK: NO ACK (отримано: '�F#g�8F����f#g�8f����F�g�8F�g��')[0m
+[1;31mE (564158) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (564788) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (564988) LINK: NO ACK (отримано: '8f�g�8f����F#��8F���8F����F#g��')[0m
+[0;32mI (564988) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (565188) LINK: NO ACK (отримано: '�f#g�8f���8F����F����F�g��F#��8')[0m
+[0;32mI (565188) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (565388) LINK: NO ACK (отримано: '�f�g��f#g��F#��8F�g�8F#g��F#��8')[0m
+[1;31mE (565388) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (568388) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (568588) LINK: NO ACK (отримано: '�V7w��F7w��F�w��V7w��V7w�8�7w��')[0m
+[0;32mI (568588) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (568788) LINK: NO ACK (отримано: '�V7w��F7w��F7w��V7w��ַ���F7w��')[0m
+[0;32mI (568788) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (568988) LINK: NO ACK (отримано: '�V7w��F7w��F7w��V7w��V7w��F7w��')[0m
+[1;31mE (568988) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (572168) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (572368) LINK: NO ACK (отримано: '�V7w��ַw�8F7����7w��V�w�8V7��8')[0m
+[0;32mI (572368) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (572568) LINK: NO ACK (отримано: '�V�����7w��F�w�8F�w�8V7���V7��8')[0m
+[0;32mI (572568) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (572768) LINK: NO ACK (отримано: '�V7w��V7w�8Ʒ��8Ʒ��8ַ��8ַ��8')[0m
+[1;31mE (572768) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (576108) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (576308) LINK: NO ACK (отримано: '�v#g��F#g��F#g��F#g��F#g��F#g��')[0m
+[0;32mI (576308) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (576508) LINK: NO ACK (отримано: '8f#g��F�g��F#g��F#���F#g��F���8')[0m
+[0;32mI (576508) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (576708) LINK: NO ACK (отримано: '�f#g��V#���V#g�8V#g�8V#g��V#��8')[0m
+[1;31mE (576708) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (580848) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (581048) LINK: NO ACK (отримано: '���V#��8V�g��v#g�8v���8F���8F��')[0m
+[0;32mI (581048) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (581248) LINK: NO ACK (отримано: 'g��F#g��F#g�8f#���f#g��F#g��F#g')[0m
+[0;32mI (581248) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (581448) LINK: NO ACK (отримано: 'g��F#g��F���8f�g��f#g��F#g��F�g')[0m
+[1;31mE (581448) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (582008) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (582208) LINK: NO ACK (отримано: 'g��V#g��V#g��V#g��V#o��v#o��v#g')[0m
+[0;32mI (582208) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (582408) LINK: NO ACK (отримано: 'g��F#g��F#g�8F����F#g��f#g��f#g')[0m
+[0;32mI (582408) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (582608) LINK: NO ACK (отримано: 'g��F����F#g��F#g��F����f���8f��')[0m
+[1;31mE (582608) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (582988) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (583188) LINK: NO ACK (отримано: '���8F����F���8F���8F�g�8F�g��f#')[0m
+[0;32mI (583188) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (583388) LINK: NO ACK (отримано: '����F#���F�g��F#g�8F#g�8F#���f#')[0m
+[0;32mI (583388) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (583588) LINK: NO ACK (отримано: '#g��F�g��F#g��F#g��F#g��F#��8f�')[0m
+[1;31mE (583588) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (584968) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (585168) LINK: NO ACK (отримано: 'F#o��F#g��F#���F#g��F#g��F#g��F')[0m
+[0;32mI (585168) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (585368) LINK: NO ACK (отримано: 'F#g��F#g��F#g��F#g��F#g��F#g�8F')[0m
+[0;32mI (585368) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (585568) LINK: NO ACK (отримано: 'F�g�8F#g�8F����F#g��F#g��F#g��F')[0m
+[1;31mE (585568) LINK: STM32 не відповідає після 3 спроб[0m
+[0;32mI (586248) LINK: TX -> ON (спроба 1)[0m
+[0;33mW (586448) LINK: NO ACK (отримано: 'F#g��F#���F����f����f�g��F#g��F')[0m
+[0;32mI (586448) LINK: TX -> ON (спроба 2)[0m
+[0;33mW (586648) LINK: NO ACK (отримано: 'F#g��F#g��F#g��f#g��f#g�8V#���V')[0m
+[0;32mI (586648) LINK: TX -> ON (спроба 3)[0m
+[0;33mW (586848) LINK: NO ACK (отримано: 'V#g��V#g��V���8v#��8v����V#g�8V')[0m
+[1;31mE (586848) LINK: STM32 не відповідає після 3 спроб[0m

@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/gfnow/Projects/UART/esp32/build/CMakeFiles/bootloader
+/home/gfnow/Projects/UART/esp32/build/CMakeFiles/bootloader.rule
+/home/gfnow/Projects/UART/esp32/build/CMakeFiles/bootloader-complete.rule
+/home/gfnow/Projects/UART/esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/gfnow/Projects/UART/esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/gfnow/Projects/UART/esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/gfnow/Projects/UART/esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/gfnow/Projects/UART/esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/gfnow/Projects/UART/esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/gfnow/Projects/UART/esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
