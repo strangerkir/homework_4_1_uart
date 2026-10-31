@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/uart.h"
@@ -16,6 +15,8 @@
 #define BTN_PIN        GPIO_NUM_0
 #define ACK_TIMEOUT_MS 200
 #define MAX_RETRIES    3
+
+#define LED_PIN        GPIO_NUM_4
 
 static const char *TAG = "LINK";
 
@@ -34,6 +35,21 @@ static void link_init(void)
     ESP_ERROR_CHECK(uart_set_pin(LINK_UART, LINK_TX_PIN, LINK_RX_PIN,
                                  UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE));
     gpio_set_pull_mode(LINK_RX_PIN, GPIO_PULLUP_ONLY);
+}
+
+static void led_init() {
+    const gpio_config_t config = {
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE,
+        .mode = GPIO_MODE_OUTPUT,
+        .pin_bit_mask = (1ULL << LED_PIN)
+    };
+    ESP_ERROR_CHECK(gpio_config(&config));
+
+    gpio_config(&config);
+
+    gpio_set_level(LED_PIN, 1);
 }
 
 static bool read_line(char *buf, size_t len, int timeout_ms)
@@ -77,6 +93,7 @@ static bool send_cmd(const char *cmd)
 void app_main(void)
 {
     link_init();
+    led_init();
 
     gpio_config_t btn = {
         .pin_bit_mask = 1ULL << BTN_PIN,
@@ -104,6 +121,23 @@ void app_main(void)
                 }
             }
         }
+
+        char rx[16];
+        read_line(rx, sizeof rx, 100);
+
+        if (strcmp(rx, "ON") == 0) {
+            ESP_LOGI(TAG, "Turning LED on");
+            gpio_set_level(LED_PIN, 1);
+        } else if (strcmp(rx, "OFF") == 0) {
+            ESP_LOGI(TAG, "Turning LED off");
+            gpio_set_level(LED_PIN, 0);
+        } else if (strcmp(rx, "") == 0) {
+            ESP_LOGI(TAG, "No input");
+        }
+        else {
+            ESP_LOGW(TAG, "Unexpected input: %s", rx);
+        }
+
         vTaskDelay(pdMS_TO_TICKS(10));
     }
 }

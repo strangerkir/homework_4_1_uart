@@ -47,6 +47,7 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 #define RB_SIZE 64
+#define DEBOUNCE_DELAY 100
 static volatile uint8_t  rb[RB_SIZE];
 static volatile uint16_t rb_head = 0;
 static volatile uint16_t rb_tail = 0;
@@ -57,6 +58,8 @@ static volatile uint32_t rb_overflow = 0;
 
 static char    line[32];
 static uint8_t line_len = 0;
+
+static char next_command[5] = "ON\n";
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -116,7 +119,7 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
   }
 }
 
-static void handle_command(const char *cmd)
+static void handle_input(const char *cmd)
 {
   if (strcmp(cmd, "ON") == 0) {
     led_set(1);
@@ -182,7 +185,7 @@ int main(void)
 	  	        if (c == '\r') continue;
 	  	        if (c == '\n') {
 	  	          line[line_len] = '\0';
-	  	          handle_command(line);
+	  	          handle_input(line);
 	  	          line_len = 0;
 	  	        } else if (line_len < sizeof(line) - 1) {
 	  	          line[line_len++] = c;
@@ -195,6 +198,14 @@ int main(void)
 	  	        last_errors = link_errors;
 	  	        log_printf("[STM] UART error #%lu (baud/parity mismatch? noise?)\r\n",
 	  	                   (unsigned long)last_errors);
+	  	      }
+
+	  	      if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_RESET) {
+	  	    	  HAL_Delay(DEBOUNCE_DELAY);
+	  	    	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_RESET) {
+	  	    		link_send(next_command);
+	  	    		strcmp(next_command, "ON\n") == 0  ? strcpy(next_command, "OFF\n") : strcpy(next_command, "ON\n");
+	  	    	}
 	  	      }
     /* USER CODE END WHILE */
 
@@ -335,6 +346,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
